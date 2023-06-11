@@ -1,13 +1,16 @@
-import PocketBase, { Record } from "pocketbase";
+import { Record } from "pocketbase";
+import { dbConnection } from "./db";
+import { CreateNoteForm } from "./CreateNoteForm";
 
 // controls caching (we don't want to cache the result of this fetch)
 export const revalidate = 0;
 
-const pb = new PocketBase("http://127.0.0.1:8090");
+// TODO fetch configs from .env file
+// replacew it with Supabase later
 
 // TODO: add pagiation
 async function fetchNotes(): Promise<Record[]> {
-  const notes = await pb.collection("notes").getFullList();
+  const notes = await dbConnection.collection("notes").getFullList();
   return notes;
 }
 
@@ -24,6 +27,7 @@ export default async function Notes() {
           </div>
         );
       })}
+      <CreateNoteForm />
     </div>
   );
 }
