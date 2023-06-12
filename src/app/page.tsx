@@ -18,16 +18,20 @@ export default async function Notes() {
   const noteList = await fetchNotes();
 
   return (
-    <div className="flex flex-row justify-evenly">
-      {noteList.map((note) => {
-        return (
-          <div key={note.id}>
-            <h1>{note.title}</h1>
-            <p>{note.content}</p>
-          </div>
-        );
-      })}
-      <CreateNoteForm />
+    <div className="flex flex-col justify-evenly">
+      <div className="flex flex-row justify-evenly gap-4">
+        {noteList.map((note) => {
+          return (
+            <div key={note.id}>
+              <h1>{note.title}</h1>
+              <p>{note.content}</p>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        <CreateNoteForm />
+      </div>
     </div>
   );
 }

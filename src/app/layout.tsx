@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { NavBar } from '@/components/NavBar';
+import { PageContainer } from '@/components/PageContainer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className="flex flex-col h-screen w-screen bg-amber-100">
-          <NavBar />
-          {children}
+          <PageContainer>
+            <NavBar />
+            {children}
+          </PageContainer>
         </main>
       </body>
     </html>
