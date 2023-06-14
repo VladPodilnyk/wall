@@ -32,7 +32,7 @@ export function CreateNoteForm() {
   }, [content, router, title]);
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="flex flex-col gap-2">
       <h3>Create a new note</h3>
       <input
         type="text"
@@ -45,7 +45,7 @@ export function CreateNoteForm() {
         value={content}
         onChange={onContentChange}
       />
-      <button type="submit">Create</button>
+      <button type="submit" className="border-2 border-black">Create</button>
     </form>
   );
 }

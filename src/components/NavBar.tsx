@@ -10,7 +10,7 @@ const NavBarLink: React.FC<NavBarLinkProps> = ({ href, children }) => {
     <Link href={href} className="font-semibold text-base underline">
       {children}
     </Link>
-  )
+  );
 };
 
 
