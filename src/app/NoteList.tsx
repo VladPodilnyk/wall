@@ -1,4 +1,4 @@
-import { UserNote } from "./db";
+import { UserNote } from "../lib/db";
 
 interface NoteProps {
     title: string;
@@ -7,13 +7,12 @@ interface NoteProps {
 
 const Note: React.FC<NoteProps> = ({ title, content }) => {
   return (
-    <div className="flex flex-col min-w-[10rem] min-h-[10rem] bg-white border-solid border-2 border-black">
+    <div className="card">
       <h1>{title}</h1>
       <p>{content}</p>
     </div>
   );
 };
-
 
 interface NoteListProps {
   notes: UserNote[];
@@ -21,7 +20,7 @@ interface NoteListProps {
 
 export const NoteList: React.FC<NoteListProps> = ({notes}) => {
   return (
-    <div className="flex flex-row flex-wrap justify-start gap-4">
+    <div className="note-list">
       {notes.map((note) => {
         return (
           <Note

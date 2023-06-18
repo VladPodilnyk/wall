@@ -1,6 +1,6 @@
 import { Record } from "pocketbase";
-import { UserNote, dbConnection } from "./db";
-import { CreateNoteForm } from "./CreateNoteForm";
+import { UserNote, dbConnection } from "../lib/db";
+import { CreateNoteForm } from "../components/CreateNoteForm";
 import { NoteList } from "./NoteList";
 
 // controls caching (we don't want to cache the result of this fetch)

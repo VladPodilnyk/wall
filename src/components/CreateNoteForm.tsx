@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import { dbConnection } from "./db";
+import { dbConnection } from "../lib/db";
 import { useRouter } from "next/navigation";
 
 export function CreateNoteForm() {
